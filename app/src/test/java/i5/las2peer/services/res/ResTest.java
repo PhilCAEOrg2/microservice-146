@@ -125,6 +125,8 @@ public class ResTest {
       assertThat("[741615]", response, both(isA(JSONObject.class)).and(asJSONObject(hasField("user", isA(JSONObject.class)))));
       
 
+      Assert.assertEquals("[858922]", 200, result.getHttpCode());
+
       System.out.println("Result of 'test$HTTP_Method_Name$': " + result.getResponse().trim());
     } catch (Exception e) {
       e.printStackTrace();
