@@ -122,7 +122,7 @@ public class ResTest {
 """);
       Object response = JSONValue.parse(result.getResponse().trim());
       // Response body has field "user" has type JSON Object
-      assertThat("[ID578600]", response, both(isA(JSONObject.class)).and(asJSONObject(hasField("user", isA(JSONObject.class)))));
+      assertThat("[741615]", response, both(isA(JSONObject.class)).and(asJSONObject(hasField("user", isA(JSONObject.class)))));
       
 
       System.out.println("Result of 'test$HTTP_Method_Name$': " + result.getResponse().trim());
