@@ -126,6 +126,9 @@ public class ResTest {
       
 
       Assert.assertEquals("[858922]", 200, result.getHttpCode());
+      // Response body all list entries has field "user" has field "address" has field "city" has type String
+      assertThat("[414156]", response, both(isA(JSONArray.class)).and(asJSONObjectList(everyItem(both(isA(JSONObject.class)).and(asJSONObject(hasField("user", both(isA(JSONObject.class)).and(asJSONObject(hasField("address", both(isA(JSONObject.class)).and(asJSONObject(hasField("city", isA(String.class))))))))))))));
+      
 
       System.out.println("Result of 'test$HTTP_Method_Name$': " + result.getResponse().trim());
     } catch (Exception e) {
